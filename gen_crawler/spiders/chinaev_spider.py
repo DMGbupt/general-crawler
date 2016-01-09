@@ -50,7 +50,7 @@ class ChinaevNews(IndexSpider):
             page += 1
             attr[-1] = str(page)
         else:
-            spider_logger.error("Can't get next page from %s" % response.url)
+            spider_logger.info("Get last index page: %s" % response.url)
             return 
         return "=".join(attr)
 

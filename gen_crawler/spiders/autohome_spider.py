@@ -57,7 +57,7 @@ class CaamNews(IndexSpider):
         if page < (maxpage if self.crawl_mode == 1 else(crawlpage if crawlpage<maxpage else maxpage)):
             page += 1
         else:
-            spider_logger.error("Can't get next page from %s" % response.url)
+            spider_logger.info("Get last index page: %s" % response.url)
             return
         next_url = re.split("&page=|&ExcptArtIds=", response.url)
         return next_url[0]+"&page="+str(page)+"&ExcptArtIds="+next_url[2]

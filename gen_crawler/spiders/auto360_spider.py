@@ -55,7 +55,7 @@ class Auto360News(IndexSpider):
             page += 1
             attr[-2] = str(page)
         else:
-            spider_logger.error("Can't get next page from %s" % response.url)
+            spider_logger.info("Get last index page: %s" % response.url)
             return 
         return "_".join(attr[:-1])+".html"
 
